@@ -46,14 +46,5 @@ var chromeAutosizingText = function() {
     var innerWidth = window.top.innerWidth;
     var outerWidth = window.top.outerWidth;
 
-    var debugText = "";
-    debugText += ("deviceScaleAdjustment(" + deviceScaleAdjustment + ") ");
-    debugText += ("innerWidth(" + innerWidth + ") ");
-    debugText += ("outerWidth(" + outerWidth + ") ");
-    debugText += ("result(" + (deviceScaleAdjustment * accessibilityFontScaleFactor * innerWidth / outerWidth) + ") ");
-    setTimeout(function() {
-        window.alert(debugText);
-    }, 200);
-
     return deviceScaleAdjustment * accessibilityFontScaleFactor * innerWidth / outerWidth > 1;
 }
