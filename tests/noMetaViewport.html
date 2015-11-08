@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<script src="../autosizing.js"></script>
+<style>
+.autosized {
+    color: transparent;
+    font-family: monospace;
+}
+.autosized::first-line {
+    background: blue;
+}
+.notAutosized {
+    color: transparent;
+    width: 50px; /* explicit narrow width disables autosizing */
+    font-family: monospace;
+}
+.notAutosized::first-line {
+    background: blue;
+}
+body {
+    overflow: hidden;
+}
+</style>
+<h3>Autosizing detection test</h3>
+<h5>This test passes if the following lines are <span id="not">not</span> the same width.</h5>
+
+<div class="notAutosized">
+Should_not_be_autosized.
+</div>
+<br>
+<div class="autosized">
+Should_be_autosized.1234<br><!--1234 is to ensure the notAutosized and autosized cases are the same width-->
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br><!--all this text is needed so the autosizer kicks in as if this were a body of content-->
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+Should_be_autosized.1234<br>
+One line with a lot of text Pickled YOLO mlkshk next level green juice farm-to-table. You probably haven't heard of them iPhone slow-carb, poutine etsy schlitz portland neutra hammock fixie twee flannel. Gentrify authentic artisan whatever next level. Bushwick 8-bit hashtag readymade migas, mlkshk chartreuse waistcoat heirloom umami kickstarter pitchfork try-hard. Fashion axe vice polaroid, yr deep v venmo twee cardigan. Pork belly ramps fixie brunch. Sartorial polaroid quinoa lumbersexual twee.
+</div>
+<script>
+if (!chromeAutosizingText())
+    document.getElementById("not").textContent = "";
+</script>
