@@ -2,7 +2,10 @@
 
 // Determine if Chrome's text autosizer (aka font boosting) is running.
 //
-// This code closely follows the algorithm used:
+// Returns true if autosizing is running, false otherwise. Must have access to the top window object
+// (i.e., not in a cross-origin frame) or a SecurityError will be thrown.
+//
+// This code closely follows the algorithm used in Chrome:
 // https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/layout/TextAutosizer.cpp&l=554
 var chromeAutosizingText = function() {
     // Determine if a meta viewport is set at all.
@@ -41,7 +44,7 @@ var chromeAutosizingText = function() {
     // We assume the default value of 100%.
     var accessibilityFontScaleFactor = 1;
 
-    // We are unable to determine the true screen size from within cross-domain iframes and the
+    // We are unable to determine the true screen size from within cross-domain frames and the
     // following will throw a SecurityError if we try.
     var innerWidth = window.top.innerWidth;
     var outerWidth = window.top.outerWidth;
